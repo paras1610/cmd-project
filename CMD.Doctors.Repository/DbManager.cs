@@ -60,7 +60,7 @@ namespace CMD.Doctors.Repository
                     throw new DoctorNotFoundException("Doctor not Found with Such Requirements !!!");
                 }
             }
-            catch (DoctorNotFoundException ex) { throw; }
+            catch (DoctorNotFoundException) { throw; }
             catch (Exception) { throw; }
             return isDeleted;
         }
@@ -93,7 +93,6 @@ namespace CMD.Doctors.Repository
             }
             catch (DoctorNotFoundException) { throw; }
             catch (Exception) { throw; }
- 
             return doctor;
         }
 
