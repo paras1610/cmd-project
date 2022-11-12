@@ -81,7 +81,7 @@ namespace CMD.Doctors.Repository
                 doctorToBeUpdated.EmailId = doctor.EmailId;
                 doctorToBeUpdated.PhoneNo = doctor.PhoneNo;
                 doctorToBeUpdated.Speciality = doctor.Speciality;
-               // doctorToBeUpdated.NpiNo = doctor.NpiNo;
+          
                 doctorToBeUpdated.PracticeLocation = doctor.PracticeLocation;
 
                 dbContext.SaveChanges();
@@ -95,12 +95,11 @@ namespace CMD.Doctors.Repository
             bool isValid = false;
 
             var doctorToBeSignedIn = dbContext.doctorsSignIn.FirstOrDefault(x => x.emailId.Equals(emailId));
-            if(doctorToBeSignedIn != null)
+            if(doctorToBeSignedIn != null && doctorToBeSignedIn.password.Equals(password))
             {
-                if (doctorToBeSignedIn.password.Equals(password))
-                {
+               
                     isValid = true;
-                }
+              
             }
 
             return isValid;

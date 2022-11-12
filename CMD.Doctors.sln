@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMD.Doctors.Models", "CMD.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMD.Doctors.Repository", "CMD.Doctors.Repository\CMD.Doctors.Repository.csproj", "{C1DE99CF-4A01-45B8-BDA6-A7EC40E1CF4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Temporary", "Temporary\Temporary.csproj", "{C5C7D9E4-5695-4EA3-8EEC-A538FF4A567B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMD.DoctorIIsHost", "CMD.DoctorIIsHost\CMD.DoctorIIsHost.csproj", "{6CACA305-5A01-4681-ABD6-6813EFEE8401}"
 EndProject
 Global
@@ -43,10 +41,6 @@ Global
 		{C1DE99CF-4A01-45B8-BDA6-A7EC40E1CF4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1DE99CF-4A01-45B8-BDA6-A7EC40E1CF4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1DE99CF-4A01-45B8-BDA6-A7EC40E1CF4C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C5C7D9E4-5695-4EA3-8EEC-A538FF4A567B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C5C7D9E4-5695-4EA3-8EEC-A538FF4A567B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C5C7D9E4-5695-4EA3-8EEC-A538FF4A567B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C5C7D9E4-5695-4EA3-8EEC-A538FF4A567B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6CACA305-5A01-4681-ABD6-6813EFEE8401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6CACA305-5A01-4681-ABD6-6813EFEE8401}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CACA305-5A01-4681-ABD6-6813EFEE8401}.Release|Any CPU.ActiveCfg = Release|Any CPU
