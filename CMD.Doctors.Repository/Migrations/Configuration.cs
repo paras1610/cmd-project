@@ -10,7 +10,6 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            
         }
 
         protected override void Seed(CMD.Doctors.Repository.DoctorsDbContext context)

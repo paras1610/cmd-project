@@ -10,3 +10,9 @@ C:\Users\Paras1610\Desktop\Final CMD code\CMDproject\Project\CMD.Doctors\CMD.Doc
 C:\Users\Paras1610\Desktop\Final CMD code\CMDproject\Project\CMD.Doctors\CMD.Doctors.DTOs\obj\Debug\CMD.Doctors.DTOs.csproj.CoreCompileInputs.cache
 C:\Users\Paras1610\Desktop\Final CMD code\CMDproject\Project\CMD.Doctors\CMD.Doctors.DTOs\obj\Debug\CMD.Doctors.DTOs.dll
 C:\Users\Paras1610\Desktop\Final CMD code\CMDproject\Project\CMD.Doctors\CMD.Doctors.DTOs\obj\Debug\CMD.Doctors.DTOs.pdb
+C:\Users\User\Desktop\Sb\pulling folder\doctor_service\CMD.Doctors.DTOs\bin\Debug\CMD.Doctors.DTOs.dll
+C:\Users\User\Desktop\Sb\pulling folder\doctor_service\CMD.Doctors.DTOs\bin\Debug\CMD.Doctors.DTOs.pdb
+C:\Users\User\Desktop\Sb\pulling folder\doctor_service\CMD.Doctors.DTOs\obj\Debug\CMD.Doctors.DTOs.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Sb\pulling folder\doctor_service\CMD.Doctors.DTOs\obj\Debug\CMD.Doctors.DTOs.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Sb\pulling folder\doctor_service\CMD.Doctors.DTOs\obj\Debug\CMD.Doctors.DTOs.dll
+C:\Users\User\Desktop\Sb\pulling folder\doctor_service\CMD.Doctors.DTOs\obj\Debug\CMD.Doctors.DTOs.pdb

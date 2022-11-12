@@ -33,7 +33,7 @@ namespace CMD.Doctors.BusinessLogic
             {
                 isAdded = dbManager.AddDoctor(doctor);
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception) { throw; }
 
             return isAdded;
         }
@@ -46,7 +46,7 @@ namespace CMD.Doctors.BusinessLogic
             {
                 isDeleted = dbManager.DeleteDoctorById(idToBeSearched);
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception) { throw; }
             return isDeleted;
         }
 
@@ -57,7 +57,7 @@ namespace CMD.Doctors.BusinessLogic
             {
                 doctors = dbManager.GetAllDoctors();
             }
-            catch(Exception ex) { throw ex; }   
+            catch(Exception) { throw; }   
             List<DoctorDTO> allDoctors = new List<DoctorDTO>();
 
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Doctor, DoctorDTO>());
@@ -77,7 +77,7 @@ namespace CMD.Doctors.BusinessLogic
             {
                 doc = dbManager.GetDoctorById(npiNo);
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception) { throw; }
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Doctor, DoctorDTO>());
             var mapper = new Mapper(config);
             DoctorDTO doctor = mapper.Map<DoctorDTO>(doc);
@@ -91,7 +91,7 @@ namespace CMD.Doctors.BusinessLogic
             {
                 doc = dbManager.GetDoctorByEmailId(Email);
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception) { throw; }
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Doctor, DoctorDTO>());
             var mapper = new Mapper(config);
             DoctorDTO doctor = mapper.Map<DoctorDTO>(doc);
@@ -110,7 +110,7 @@ namespace CMD.Doctors.BusinessLogic
             {
                 isUpdated = dbManager.UpdateDoctor(doctor, npiNo);
             }
-            catch(Exception ex) { throw ex; }
+            catch(Exception) { throw; }
             return isUpdated;
         }
 
@@ -121,7 +121,7 @@ namespace CMD.Doctors.BusinessLogic
             {
                 isValid = dbManager.ValidateDoctorForSignIn(emailId, password);
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception) { throw; }
             return isValid;
         }
 
@@ -143,8 +143,8 @@ namespace CMD.Doctors.BusinessLogic
                 }
                 if (idToBeSearched == -1) throw new WrongNpiIdException("You Have Entered Wrong NPI ID !!!");
             }
-            catch (WrongNpiIdException ex) { throw ex; }
-            catch (Exception ex) { throw ex; }
+            catch (WrongNpiIdException) { throw; }
+            catch (Exception) { throw; }
             return idToBeSearched;
         }
     }

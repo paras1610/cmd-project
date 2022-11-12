@@ -54,9 +54,9 @@
     <Compile Include="DbManager.cs" />
     <Compile Include="DoctorNotFoundException.cs" />
     <Compile Include="DoctorsDbContext.cs" />
-    <Compile Include="Migrations\202211061633499_init.cs" />
-    <Compile Include="Migrations\202211061633499_init.designer.cs">
-      <DependentUpon>202211061633499_init.cs</DependentUpon>
+    <Compile Include="Migrations\202211111953054_innit.cs" />
+    <Compile Include="Migrations\202211111953054_innit.designer.cs">
+      <DependentUpon>202211111953054_innit.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NoDoctorsAtAllException.cs" />
@@ -74,8 +74,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202211061633499_init.resx">
-      <DependentUpon>202211061633499_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202211111953054_innit.resx">
+      <DependentUpon>202211111953054_innit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
