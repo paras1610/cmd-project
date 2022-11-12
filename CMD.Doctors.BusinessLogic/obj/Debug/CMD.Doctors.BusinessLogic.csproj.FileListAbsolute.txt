@@ -36,3 +36,22 @@ C:\Users\Paras1610\Desktop\Final CMD code\CMDproject\Project\CMD.Doctors\CMD.Doc
 C:\Users\Paras1610\Desktop\Final CMD code\CMDproject\Project\CMD.Doctors\CMD.Doctors.BusinessLogic\obj\Debug\CMD.Doctors.BusinessLogic.csproj.CopyComplete
 C:\Users\Paras1610\Desktop\Final CMD code\CMDproject\Project\CMD.Doctors\CMD.Doctors.BusinessLogic\obj\Debug\CMD.Doctors.BusinessLogic.dll
 C:\Users\Paras1610\Desktop\Final CMD code\CMDproject\Project\CMD.Doctors\CMD.Doctors.BusinessLogic\obj\Debug\CMD.Doctors.BusinessLogic.pdb
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.Doctors.BusinessLogic\bin\Debug\CMD.Doctors.BusinessLogic.dll
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.Doctors.BusinessLogic\bin\Debug\CMD.Doctors.BusinessLogic.pdb
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.Doctors.BusinessLogic\bin\Debug\AutoMapper.dll
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.Doctors.BusinessLogic\bin\Debug\CMD.Doctors.DTOs.dll
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.Doctors.BusinessLogic\bin\Debug\CMD.Doctors.Models.dll
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.Doctors.BusinessLogic\bin\Debug\CMD.Doctors.Repository.dll
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.Doctors.BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.Doctors.BusinessLogic\bin\Debug\CMD.Doctors.DTOs.pdb
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.Doctors.BusinessLogic\bin\Debug\CMD.Doctors.Models.pdb
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.Doctors.BusinessLogic\bin\Debug\CMD.Doctors.Models.dll.config
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.Doctors.BusinessLogic\bin\Debug\CMD.Doctors.Repository.pdb
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.Doctors.BusinessLogic\bin\Debug\CMD.Doctors.Repository.dll.config
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.Doctors.BusinessLogic\bin\Debug\AutoMapper.xml
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.Doctors.BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.Doctors.BusinessLogic\obj\Debug\CMD.Doctors.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.Doctors.BusinessLogic\obj\Debug\CMD.Doctors.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.Doctors.BusinessLogic\obj\Debug\CMD.Doctors.BusinessLogic.csproj.CopyComplete
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.Doctors.BusinessLogic\obj\Debug\CMD.Doctors.BusinessLogic.dll
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.Doctors.BusinessLogic\obj\Debug\CMD.Doctors.BusinessLogic.pdb

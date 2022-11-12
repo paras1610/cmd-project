@@ -23,3 +23,28 @@ C:\Users\Paras1610\Desktop\Final CMD code\CMDproject\Project\CMD.Doctors\CMD.Doc
 C:\Users\Paras1610\Desktop\Final CMD code\CMDproject\Project\CMD.Doctors\CMD.DoctorIIsHost\obj\Debug\CMD.DoctorIIsHost.csproj.CopyComplete
 C:\Users\Paras1610\Desktop\Final CMD code\CMDproject\Project\CMD.Doctors\CMD.DoctorIIsHost\obj\Debug\CMD.DoctorIIsHost.dll
 C:\Users\Paras1610\Desktop\Final CMD code\CMDproject\Project\CMD.Doctors\CMD.DoctorIIsHost\obj\Debug\CMD.DoctorIIsHost.pdb
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\bin\CMD.DoctorIIsHost.dll.config
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\bin\CMD.DoctorIIsHost.dll
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\bin\CMD.DoctorIIsHost.pdb
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\bin\CMD.Doctors.Service.dll
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\bin\CMD.Doctors.BusinessLogic.dll
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\bin\AutoMapper.dll
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\bin\CMD.Doctors.DTOs.dll
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\bin\CMD.Doctors.Repository.dll
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\bin\CMD.Doctors.Models.dll
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\bin\EntityFramework.dll
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\bin\CMD.Doctors.Service.pdb
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\bin\CMD.Doctors.Service.dll.config
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\bin\CMD.Doctors.BusinessLogic.pdb
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\bin\AutoMapper.xml
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\bin\CMD.Doctors.DTOs.pdb
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\bin\CMD.Doctors.Repository.pdb
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\bin\CMD.Doctors.Repository.dll.config
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\bin\CMD.Doctors.Models.pdb
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\bin\CMD.Doctors.Models.dll.config
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\bin\EntityFramework.xml
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\obj\Debug\CMD.DoctorIIsHost.csproj.AssemblyReference.cache
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\obj\Debug\CMD.DoctorIIsHost.csproj.CoreCompileInputs.cache
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\obj\Debug\CMD.DoctorIIsHost.csproj.CopyComplete
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\obj\Debug\CMD.DoctorIIsHost.dll
+C:\Users\shash\OneDrive\Desktop\ATMECSGit\Doctor\doctor_service\CMD.DoctorIIsHost\obj\Debug\CMD.DoctorIIsHost.pdb
