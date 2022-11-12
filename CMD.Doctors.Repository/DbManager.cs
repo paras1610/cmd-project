@@ -8,18 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CMD.Doctors.Repository
-{
+{ 
     public class DbManager
     {
         private DbManager() { }
         private static DbManager instance = null;
+
         public static DbManager GetDbManagerInstance()
         {
-            if (instance == null)
+            try
             {
-                instance = new DbManager();
+                if (instance == null)
+                {
+                    instance = new DbManager();
+                }
+                return instance;
             }
-            return instance;
+            catch (Exception ex) { throw ex; };
         }
         DoctorsDbContext dbContext = new DoctorsDbContext();
         public bool AddDoctor(Doctor doctor)
@@ -37,7 +42,7 @@ namespace CMD.Doctors.Repository
                 dbContext.SaveChanges();
                 isAdded = true;
             }
-            catch (DbEntityValidationException) { throw; }
+            catch (DbEntityValidationException) { throw new DbEntityValidationException("Wrong credentials"); }
             catch (Exception) { throw; }
             return isAdded;
         }
@@ -60,7 +65,7 @@ namespace CMD.Doctors.Repository
                     throw new DoctorNotFoundException("Doctor not Found with Such Requirements !!!");
                 }
             }
-            catch (DoctorNotFoundException) { throw; }
+            
             catch (Exception) { throw; }
             return isDeleted;
         }
@@ -76,7 +81,7 @@ namespace CMD.Doctors.Repository
                     throw new NoDoctorsAtAllException("There are no Doctors Present at this Moment !!!");
                 }
             }
-            catch (NoDoctorsAtAllException) { throw; }
+          
             catch (Exception) { throw; }
             return allPatients;
         }
@@ -91,7 +96,7 @@ namespace CMD.Doctors.Repository
                     throw new DoctorNotFoundException("Doctor not Found with Such Requirements !!!");
                 }
             }
-            catch (DoctorNotFoundException) { throw; }
+            
             catch (Exception) { throw; }
             return doctor;
         }
@@ -106,7 +111,7 @@ namespace CMD.Doctors.Repository
                     throw new DoctorNotFoundException("Doctor not Found with Such Requirements !!!");
                 }
             }
-            catch (DoctorNotFoundException) { throw; }
+          
             catch (Exception) { throw; }
             return doctor;
         }
@@ -131,7 +136,7 @@ namespace CMD.Doctors.Repository
                 }
                 else throw new DoctorNotFoundException("Doctor not Found with Such Requirements !!!");
             }
-            catch (DoctorNotFoundException) { throw; }
+       
             catch (Exception) { throw; }
             return isUpdated;
         }
@@ -154,8 +159,8 @@ namespace CMD.Doctors.Repository
                 }
                 else throw new DoctorNotFoundException("Doctor not Found with Such Requirements !!!");
             }
-            catch (DoctorNotFoundException) { throw; }
-            catch (WrongPasswordException) { throw; }
+         
+        
             catch (Exception) { throw; }
             return isValid;
         }
