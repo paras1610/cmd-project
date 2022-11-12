@@ -12,52 +12,32 @@ namespace CMD.Doctors.BusinessLogic
 {
     public class DoctorManager
     {
-        private DoctorManager() { }
-        private static DoctorManager Instance = null;
-        public static DoctorManager GetDoctorManagerinstance()
-        {
-            if (Instance == null)
-            {
-                Instance = new DoctorManager();
-            }
-            return Instance;
-        }
-        DbManager dbManager = DbManager.GetDbManagerInstance();
+        DbManager dbManager = new DbManager();
         public bool AddDoctor(DoctorDTO doctorDTO)
         {
-            bool isAdded = false;
             var config = new MapperConfiguration(cfg => cfg.CreateMap<DoctorDTO, Doctor>());
             var mapper = new Mapper(config);
             Doctor doctor = mapper.Map<Doctor>(doctorDTO);
-            try
-            {
-                isAdded = dbManager.AddDoctor(doctor);
-            }
-            catch (Exception) { throw; }
 
-            return isAdded;
+            return dbManager.AddDoctor(doctor);
         }
 
-        public bool DeleteDoctor(String npiNo)
+        public bool deleteDoctor(String npiNo)
         {
             bool isDeleted = false;
-            long idToBeSearched = GetDoctorIdUsingNpiNo(npiNo);
-            try
+            long idToBeSearched = getDoctorIdUsingNpiNo(npiNo);
+
+            if (dbManager.deleteDoctorById(idToBeSearched))
             {
-                isDeleted = dbManager.DeleteDoctorById(idToBeSearched);
+                isDeleted = true;
             }
-            catch (Exception) { throw; }
+
             return isDeleted;
         }
 
-        public List<DoctorDTO> GetAllDoctors()
+        public List<DoctorDTO> getAllDoctors()
         {
-            List<Doctor> doctors;
-            try
-            {
-                doctors = dbManager.GetAllDoctors();
-            }
-            catch(Exception) { throw; }   
+            List<Doctor> doctors = dbManager.getAllDoctors();
             List<DoctorDTO> allDoctors = new List<DoctorDTO>();
 
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Doctor, DoctorDTO>());
@@ -70,28 +50,20 @@ namespace CMD.Doctors.BusinessLogic
             return allDoctors;
         }
 
-        public DoctorDTO GetDoctorByNpiNo(string npiNo)
+        public DoctorDTO getDoctorByNpiNo(string npiNo)
         {
-            Doctor doc;
-            try
-            {
-                doc = dbManager.GetDoctorById(npiNo);
-            }
-            catch (Exception) { throw; }
+            Doctor doc = dbManager.getDoctorById(npiNo);
+
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Doctor, DoctorDTO>());
             var mapper = new Mapper(config);
             DoctorDTO doctor = mapper.Map<DoctorDTO>(doc);
 
             return doctor;
         }
-        public DoctorDTO GetDoctorByEmailid(string Email)
+        public DoctorDTO getDoctorByEmailid(string Email)
         {
-            Doctor doc;
-            try
-            {
-                doc = dbManager.GetDoctorByEmailId(Email);
-            }
-            catch (Exception) { throw; }
+            Doctor doc = dbManager.getDoctorByEmailId(Email);
+
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Doctor, DoctorDTO>());
             var mapper = new Mapper(config);
             DoctorDTO doctor = mapper.Map<DoctorDTO>(doc);
@@ -99,54 +71,46 @@ namespace CMD.Doctors.BusinessLogic
             return doctor;
         }
 
-        public bool UpdateDoctor(DoctorDTO doctorDTO, String npiNo)
+        public bool updateDoctor(DoctorDTO doctorDTO, String npiNo)
         {
             bool isUpdated = false;
 
             var config = new MapperConfiguration(cfg => cfg.CreateMap<DoctorDTO, Doctor>());
             var mapper = new Mapper(config);
             Doctor doctor = mapper.Map<Doctor>(doctorDTO);
-            try
+
+           
+            if (dbManager.updateDoctor(doctor, npiNo))
             {
-                isUpdated = dbManager.UpdateDoctor(doctor, npiNo);
+                isUpdated = true;
             }
-            catch(Exception) { throw; }
             return isUpdated;
         }
 
-        public bool ValidateDoctorForSignIn(string emailId, string password)
+        public bool validateDoctorForSignIn(string emailId, string password)
         {
             bool isValid = false;
-            try
+            if (dbManager.validateDoctorForSignIn(emailId, password))
             {
-                isValid = dbManager.ValidateDoctorForSignIn(emailId, password);
+                isValid = true;
             }
-            catch (Exception) { throw; }
+
             return isValid;
         }
 
-        private long GetDoctorIdUsingNpiNo(string npiNo)
+        private long getDoctorIdUsingNpiNo(string npiNo)
         {
-            long idToBeSearched = -1;
-            List<DoctorDTO> docList;
-            try
+            long idToBeSearched = 0;
+            List<DoctorDTO> docList = getAllDoctors();
+            foreach (DoctorDTO doctorDTO in docList)
             {
-                docList = GetAllDoctors();
-
-                foreach (DoctorDTO doctorDTO in docList)
+                if (doctorDTO.NpiNo.Equals(npiNo))
                 {
-                    if (doctorDTO.NpiNo.Equals(npiNo))
-                    {
-                        idToBeSearched = doctorDTO.Id;
-                        break;
-                    }
+                    idToBeSearched = doctorDTO.Id;
+                    break;
                 }
-                if (idToBeSearched == -1) throw new WrongNpiIdException("You Have Entered Wrong NPI ID !!!");
             }
-            catch (WrongNpiIdException) { throw; }
-            catch (Exception) { throw; }
             return idToBeSearched;
         }
     }
-
-    }
+}

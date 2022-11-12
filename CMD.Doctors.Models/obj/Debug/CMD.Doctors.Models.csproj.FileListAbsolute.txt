@@ -34,15 +34,3 @@ C:\Users\Paras1610\Desktop\Final CMD code\CMDproject\Project\CMD.Doctors\CMD.Doc
 C:\Users\Paras1610\Desktop\Final CMD code\CMDproject\Project\CMD.Doctors\CMD.Doctors.Models\obj\Debug\CMD.Doctors.Models.csproj.CopyComplete
 C:\Users\Paras1610\Desktop\Final CMD code\CMDproject\Project\CMD.Doctors\CMD.Doctors.Models\obj\Debug\CMD.Doctors.Models.dll
 C:\Users\Paras1610\Desktop\Final CMD code\CMDproject\Project\CMD.Doctors\CMD.Doctors.Models\obj\Debug\CMD.Doctors.Models.pdb
-C:\Users\User\Desktop\Sb\pulling folder\doctor_service\CMD.Doctors.Models\bin\Debug\CMD.Doctors.Models.dll.config
-C:\Users\User\Desktop\Sb\pulling folder\doctor_service\CMD.Doctors.Models\bin\Debug\CMD.Doctors.Models.dll
-C:\Users\User\Desktop\Sb\pulling folder\doctor_service\CMD.Doctors.Models\bin\Debug\CMD.Doctors.Models.pdb
-C:\Users\User\Desktop\Sb\pulling folder\doctor_service\CMD.Doctors.Models\bin\Debug\EntityFramework.dll
-C:\Users\User\Desktop\Sb\pulling folder\doctor_service\CMD.Doctors.Models\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\User\Desktop\Sb\pulling folder\doctor_service\CMD.Doctors.Models\bin\Debug\EntityFramework.xml
-C:\Users\User\Desktop\Sb\pulling folder\doctor_service\CMD.Doctors.Models\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\User\Desktop\Sb\pulling folder\doctor_service\CMD.Doctors.Models\obj\Debug\CMD.Doctors.Models.csproj.AssemblyReference.cache
-C:\Users\User\Desktop\Sb\pulling folder\doctor_service\CMD.Doctors.Models\obj\Debug\CMD.Doctors.Models.csproj.CoreCompileInputs.cache
-C:\Users\User\Desktop\Sb\pulling folder\doctor_service\CMD.Doctors.Models\obj\Debug\CMD.Doctors.Models.csproj.CopyComplete
-C:\Users\User\Desktop\Sb\pulling folder\doctor_service\CMD.Doctors.Models\obj\Debug\CMD.Doctors.Models.dll
-C:\Users\User\Desktop\Sb\pulling folder\doctor_service\CMD.Doctors.Models\obj\Debug\CMD.Doctors.Models.pdb

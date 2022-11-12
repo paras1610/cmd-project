@@ -10,7 +10,7 @@ namespace CMD.Doctors.Repository
 {
     public class DoctorsDbContext : DbContext
     {
-        public DoctorsDbContext() : base("name=CMDConnectionString") { }
+        public DoctorsDbContext() : base("MYDB") { }
 
         public DbSet<Models.Doctor> doctors { get; set; }
         public DbSet<Models.SignInDoctor> doctorsSignIn { get; set; }

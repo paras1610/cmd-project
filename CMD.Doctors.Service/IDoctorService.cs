@@ -14,40 +14,32 @@ namespace CMD.Doctors.Service
 
         
         [OperationContract]
-        [FaultContract(typeof(ServiceFault))]
         bool ValidateDoctor(String emailId, String password);
     
         [OperationContract]
-        [FaultContract(typeof(ServiceFault))]
         bool AddDoctor(Doctor doctor); //at time of sign up
 
         [OperationContract]
-        [FaultContract(typeof(ServiceFault))]
         List<Doctor> GetAllDoctors();
 
         [OperationContract]
-        [FaultContract(typeof(ServiceFault))]
         Doctor GetDoctorByNpiNo(String npiNo);
 
 
         [OperationContract]
-        [FaultContract(typeof(ServiceFault))]
         Doctor GetDoctorByEmailid(String Emailid);
 
         [OperationContract]
-        [FaultContract(typeof(ServiceFault))]
         List<Doctor> GetDoctorsByNpiNos(List<String> npiNos);
 
         [OperationContract]
-        [FaultContract(typeof(ServiceFault))]
+
         bool UpdateDoctor(Doctor doctor, String npiNo);
 
         [OperationContract]
-        [FaultContract(typeof(ServiceFault))]
         bool RemoveDoctor(String npiNo);
 
         [OperationContract]
-        [FaultContract(typeof(ServiceFault))]
         bool SignOut();
     }
 }

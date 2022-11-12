@@ -8,160 +8,101 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CMD.Doctors.Repository
-{ 
+{
     public class DbManager
     {
-        private DbManager() { }
-        private static DbManager instance = null;
-
-        public static DbManager GetDbManagerInstance()
-        {
-            try
-            {
-                if (instance == null)
-                {
-                    instance = new DbManager();
-                }
-                return instance;
-            }
-            catch (Exception ex) { throw ex; };
-        }
         DoctorsDbContext dbContext = new DoctorsDbContext();
         public bool AddDoctor(Doctor doctor)
         {
             bool isAdded = false;
-
+            
             try
             {
                 SignInDoctor docSignIn = new SignInDoctor();
                 docSignIn.emailId = doctor.EmailId;
-                docSignIn.password = doctor.Password;
+                docSignIn.password=doctor.Password;
 
                 dbContext.doctorsSignIn.Add(docSignIn);
                 dbContext.doctors.Add(doctor);
                 dbContext.SaveChanges();
                 isAdded = true;
             }
-            catch (DbEntityValidationException) { throw new DbEntityValidationException("Wrong credentials"); }
-            catch (Exception) { throw; }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        System.Console.WriteLine("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
             return isAdded;
         }
 
-        public bool DeleteDoctorById(long id)
+        public bool deleteDoctorById(long id)
         {
             bool isDeleted = false;
             var doctorToBeDeleted = dbContext.doctors.FirstOrDefault(x => x.Id == id);
-            try
+            if (doctorToBeDeleted != null)
             {
-                if (doctorToBeDeleted != null)
-                {
-                    dbContext.doctors.Remove(doctorToBeDeleted);
-                    dbContext.SaveChanges();
-                    isDeleted = true;
-                }
-
-                else
-                {
-                    throw new DoctorNotFoundException("Doctor not Found with Such Requirements !!!");
-                }
+                dbContext.doctors.Remove(doctorToBeDeleted);
+                dbContext.SaveChanges();
+                isDeleted = true;
             }
-            
-            catch (Exception) { throw; }
             return isDeleted;
         }
 
-        public List<Doctor> GetAllDoctors()
+        public List<Doctor> getAllDoctors()
         {
-            List<Doctor> allPatients;
-            try
-            {
-                allPatients = dbContext.doctors.ToList();
-                if (allPatients.Count < 1)
-                {
-                    throw new NoDoctorsAtAllException("There are no Doctors Present at this Moment !!!");
-                }
-            }
-          
-            catch (Exception) { throw; }
+            List<Doctor> allPatients = dbContext.doctors.ToList();
             return allPatients;
         }
 
-        public Doctor GetDoctorById(String id)
+        public Doctor getDoctorById(String id)
         {
-            var doctor = dbContext.doctors.FirstOrDefault(x => x.NpiNo.Equals(id));
-            try
-            {
-                if (doctor == null)
-                {
-                    throw new DoctorNotFoundException("Doctor not Found with Such Requirements !!!");
-                }
-            }
-            
-            catch (Exception) { throw; }
-            return doctor;
+            var patient = dbContext.doctors.FirstOrDefault(x => x.NpiNo.Equals(id));
+            return patient;
         }
 
-        public Doctor GetDoctorByEmailId(String id)
+        public Doctor getDoctorByEmailId(String id)
         {
             var doctor = dbContext.doctors.FirstOrDefault(x => x.EmailId.Equals(id));
-            try
-            {
-                if (doctor == null)
-                {
-                    throw new DoctorNotFoundException("Doctor not Found with Such Requirements !!!");
-                }
-            }
-          
-            catch (Exception) { throw; }
             return doctor;
         }
 
-        public bool UpdateDoctor(Doctor doctor, string id)
+        public bool updateDoctor(Doctor doctor, string id)
         {
             bool isUpdated = false;
             var doctorToBeUpdated = dbContext.doctors.FirstOrDefault(x => x.NpiNo.Equals(id));
-            try
+            if (doctorToBeUpdated != null)
             {
-                if (doctorToBeUpdated != null)
-                {
-                    doctorToBeUpdated.Name = doctor.Name;
-                    doctorToBeUpdated.EmailId = doctor.EmailId;
-                    doctorToBeUpdated.PhoneNo = doctor.PhoneNo;
-                    doctorToBeUpdated.Speciality = doctor.Speciality;
-                    // doctorToBeUpdated.NpiNo = doctor.NpiNo;
-                    doctorToBeUpdated.PracticeLocation = doctor.PracticeLocation;
+                doctorToBeUpdated.Name = doctor.Name;
+                doctorToBeUpdated.EmailId = doctor.EmailId;
+                doctorToBeUpdated.PhoneNo = doctor.PhoneNo;
+                doctorToBeUpdated.Speciality = doctor.Speciality;
+               // doctorToBeUpdated.NpiNo = doctor.NpiNo;
+                doctorToBeUpdated.PracticeLocation = doctor.PracticeLocation;
 
-                    dbContext.SaveChanges();
-                    isUpdated = true;
-                }
-                else throw new DoctorNotFoundException("Doctor not Found with Such Requirements !!!");
+                dbContext.SaveChanges();
+                isUpdated = true;
             }
-       
-            catch (Exception) { throw; }
             return isUpdated;
         }
 
-        public bool ValidateDoctorForSignIn(string emailId, string password)
+        public bool validateDoctorForSignIn(string emailId, string password)
         {
             bool isValid = false;
 
             var doctorToBeSignedIn = dbContext.doctorsSignIn.FirstOrDefault(x => x.emailId.Equals(emailId));
-            try
+            if(doctorToBeSignedIn != null)
             {
-                if (doctorToBeSignedIn != null)
+                if (doctorToBeSignedIn.password.Equals(password))
                 {
-                    if (doctorToBeSignedIn.password.Equals(password))
-                    {
-                        isValid = true;
-                    }
-                    else throw new WrongPasswordException("Entered Wrong Password !!!");
-
+                    isValid = true;
                 }
-                else throw new DoctorNotFoundException("Doctor not Found with Such Requirements !!!");
             }
-         
-        
-            catch (Exception) { throw; }
+
             return isValid;
         }
     }

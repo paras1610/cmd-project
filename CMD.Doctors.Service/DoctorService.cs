@@ -12,36 +12,20 @@ namespace CMD.Doctors.Service
 {    
     public class DoctorService : IDoctorService
     {
-        BusinessLogic.DoctorManager manager = BusinessLogic.DoctorManager.GetDoctorManagerinstance();
+        BusinessLogic.DoctorManager manager = new BusinessLogic.DoctorManager();
 
         public bool AddDoctor(Doctor doctor)
-        {
-            bool isAdded = false;   
+        {            
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Doctor, DoctorDTO>());
             var mapper = new Mapper(config);
             DoctorDTO doctorDTO = mapper.Map<DoctorDTO>(doctor);
-            try
-            {
-                isAdded = manager.AddDoctor(doctorDTO);
-            }
-            catch (Exception ex)
-            {
-                throw new FaultException<ServiceFault>(new ServiceFault(ex.Message));
-            }
-            return isAdded;
+
+            return manager.AddDoctor(doctorDTO);
         }
 
         public List<Doctor> GetAllDoctors()
         {
-            List<DoctorDTO> doctors;
-            try
-            {
-                doctors = manager.GetAllDoctors();
-            }
-            catch (Exception ex)
-            {
-                throw new FaultException<ServiceFault>(new ServiceFault(ex.Message));
-            }
+            List<DoctorDTO> doctors = manager.getAllDoctors();
             List<Doctor> allDoctors = new List<Doctor>();
             
             var config = new MapperConfiguration(cfg => cfg.CreateMap<DoctorDTO, Doctor>());
@@ -57,15 +41,8 @@ namespace CMD.Doctors.Service
 
         public Doctor GetDoctorByNpiNo(string npiNo)
         {
-            DoctorDTO doc;
-            try
-            {
-                doc = manager.GetDoctorByNpiNo(npiNo);
-            }
-            catch (Exception ex)
-            { 
-                throw new FaultException<ServiceFault>(new ServiceFault(ex.Message)); 
-            }
+            DoctorDTO doc = manager.getDoctorByNpiNo(npiNo);
+
             var config = new MapperConfiguration(cfg => cfg.CreateMap<DoctorDTO, Doctor>());
             var mapper = new Mapper(config);
             Doctor doctor = mapper.Map<Doctor>(doc);
@@ -75,15 +52,8 @@ namespace CMD.Doctors.Service
 
         public Doctor GetDoctorByEmailid(String EmailId) 
         {
-            DoctorDTO doc;
-            try
-            {
-                doc = manager.GetDoctorByEmailid(EmailId);
-            }
-            catch (Exception ex)
-            {
-                throw new FaultException<ServiceFault>(new ServiceFault(ex.Message));
-            }
+            DoctorDTO doc = manager.getDoctorByEmailid(EmailId);
+
             var config = new MapperConfiguration(cfg => cfg.CreateMap<DoctorDTO, Doctor>());
             var mapper = new Mapper(config);
             Doctor doctor = mapper.Map<Doctor>(doc);
@@ -92,46 +62,32 @@ namespace CMD.Doctors.Service
         }
 
         public List<Doctor> GetDoctorsByNpiNos(List<String> npiNos)
-        {
-            List<Doctor> docs;
-            try
+        { 
+            List<Doctor> docs = new List<Doctor>();
+            foreach(var no in npiNos)
             {
-                docs = new List<Doctor>();
-            
-                foreach(var no in npiNos)
-                {
-                    DoctorDTO doc = manager.GetDoctorByNpiNo(no);
+                DoctorDTO doc = manager.getDoctorByNpiNo(no);
 
-                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DoctorDTO, Doctor>());
-                    var mapper = new Mapper(config);
-                    Doctor doctor = mapper.Map<Doctor>(doc);
-                    docs.Add(doctor); 
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new FaultException<ServiceFault>(new ServiceFault(ex.Message));
+                var config = new MapperConfiguration(cfg => cfg.CreateMap<DoctorDTO, Doctor>());
+                var mapper = new Mapper(config);
+                Doctor doctor = mapper.Map<Doctor>(doc);
+                docs.Add(doctor); 
             }
             return docs;
         }
         public bool RemoveDoctor(string npiNo)
         {
             bool IsRemoved = false;
-            try
+            if (manager.deleteDoctor(npiNo))
             {
-                IsRemoved = manager.DeleteDoctor(npiNo);
-            }
-            catch (Exception ex)
-            {
-                throw new FaultException<ServiceFault>(new ServiceFault(ex.Message));
+                IsRemoved = true;
             }
             return IsRemoved;
         }
 
         public bool SignOut()
         {
-            manager = null;
-            return true;
+            throw new NotImplementedException();
         }
 
         public bool UpdateDoctor(Doctor doctor, string npiNo)
@@ -141,13 +97,10 @@ namespace CMD.Doctors.Service
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Doctor, DoctorDTO>());
             var mapper = new Mapper(config);
             DoctorDTO doctorDTO = mapper.Map<DoctorDTO>(doctor);
-            try
+
+            if (manager.updateDoctor(doctorDTO, npiNo))
             {
-                IsUpadated = manager.UpdateDoctor(doctorDTO, npiNo);
-            }
-            catch (Exception ex)
-            {
-                throw new FaultException<ServiceFault>(new ServiceFault(ex.Message));
+                IsUpadated = true;
             }
             return IsUpadated;
         }
@@ -155,13 +108,9 @@ namespace CMD.Doctors.Service
         public bool ValidateDoctor(string emailId, string password)
         {
             bool IsValid = false;
-            try
+            if (manager.validateDoctorForSignIn(emailId, password))
             {
-                IsValid = manager.ValidateDoctorForSignIn(emailId, password);
-            }
-            catch (Exception ex)
-            {
-                throw new FaultException<ServiceFault>(new ServiceFault(ex.Message));
+                IsValid = true;
             }
             return IsValid;
         }
