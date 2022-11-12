@@ -55,38 +55,56 @@ namespace CMD.Doctors.Repository
 
         public List<Doctor> getAllDoctors()
         {
-            List<Doctor> allPatients = dbContext.doctors.ToList();
-            return allPatients;
+            try
+            {
+                List<Doctor> allPatients = dbContext.doctors.ToList();
+                return allPatients;
+            }
+            catch (Exception) { throw; }
         }
 
         public Doctor getDoctorById(String id)
         {
-            var patient = dbContext.doctors.FirstOrDefault(x => x.NpiNo.Equals(id));
-            return patient;
+            try
+            {
+                var patient = dbContext.doctors.FirstOrDefault(x => x.NpiNo.Equals(id));
+                return patient;
+            }
+            catch (Exception) { throw; }
         }
 
         public Doctor getDoctorByEmailId(String id)
         {
-            var doctor = dbContext.doctors.FirstOrDefault(x => x.EmailId.Equals(id));
-            return doctor;
+           
+            try
+            {
+               var doctor= dbContext.doctors.FirstOrDefault(x => x.EmailId.Equals(id));
+               return doctor;
+            }
+            catch(Exception) { throw; }
+           
         }
 
         public bool updateDoctor(Doctor doctor, string id)
         {
             bool isUpdated = false;
             var doctorToBeUpdated = dbContext.doctors.FirstOrDefault(x => x.NpiNo.Equals(id));
-            if (doctorToBeUpdated != null)
+            try
             {
-                doctorToBeUpdated.Name = doctor.Name;
-                doctorToBeUpdated.EmailId = doctor.EmailId;
-                doctorToBeUpdated.PhoneNo = doctor.PhoneNo;
-                doctorToBeUpdated.Speciality = doctor.Speciality;
-          
-                doctorToBeUpdated.PracticeLocation = doctor.PracticeLocation;
+                if (doctorToBeUpdated != null)
+                {
+                    doctorToBeUpdated.Name = doctor.Name;
+                    doctorToBeUpdated.EmailId = doctor.EmailId;
+                    doctorToBeUpdated.PhoneNo = doctor.PhoneNo;
+                    doctorToBeUpdated.Speciality = doctor.Speciality;
 
-                dbContext.SaveChanges();
-                isUpdated = true;
+                    doctorToBeUpdated.PracticeLocation = doctor.PracticeLocation;
+
+                    dbContext.SaveChanges();
+                    isUpdated = true;
+                }
             }
+            catch (Exception) { throw; }
             return isUpdated;
         }
 
@@ -97,8 +115,11 @@ namespace CMD.Doctors.Repository
             var doctorToBeSignedIn = dbContext.doctorsSignIn.FirstOrDefault(x => x.emailId.Equals(emailId));
             if(doctorToBeSignedIn != null && doctorToBeSignedIn.password.Equals(password))
             {
-               
+                try
+                {
                     isValid = true;
+                }
+                catch (Exception) { throw; }
               
             }
 
